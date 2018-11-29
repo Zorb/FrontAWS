@@ -3,7 +3,7 @@ import Win from './win.js';
 import Loss from './loss.js';
 import axios from "axios";
 import {BaseURL, CreateAccount, red} from "../constants";
-
+import 'semantic-ui-css/semantic.min.css';
 
 class Account extends Component {
 
@@ -44,11 +44,11 @@ class Account extends Component {
 
         const Main = () => {
             return (
-                <div>
+                <div className='ui segment'>
                     <h1>Account Created</h1>
                     <br/><br/>
                     <p>Account Number: {this.state.accountNum}</p><br/>
-                    <button onClick={this.handleClick}>Enter draw</button>
+                    <button className='ui button' onClick={this.handleClick}>Enter draw</button>
                 </div>
             );
         };
