@@ -32,6 +32,7 @@ class Form extends Component {
                         </div></div></div>
                 <button id="submitBtn" className='ui button' onClick={this.props.theClick}>Submit</button>
                    </div>
+                <div className="ui hidden error message" id='error'>You have to fill all the fields!</div>
             </div>
         );
     }

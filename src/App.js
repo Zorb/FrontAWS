@@ -18,18 +18,22 @@ class App extends Component {
     handleClick = () => {
         var firstName = document.getElementById("firstName").value;
         var lastName = document.getElementById("lastName").value;
-        axios.post(BaseURL + CreateAccount,
-            {
-                firstName: firstName,
-                lastName: lastName
-            }).then((response) => {
-            this.setState({
-                accountNum: response.data.accountNumber
+        if (firstName && lastName) {
+            axios.post(BaseURL + CreateAccount,
+                {
+                    firstName: firstName,
+                    lastName: lastName
+                }).then((response) => {
+                this.setState({
+                    accountNum: response.data.accountNumber
+                });
+                document.getElementById("generateNum").click();
             });
-            document.getElementById("generateNum").click();
-        });
-    };
+        }else {
+            document.getElementById("error").classList.remove("hidden");
+        }
 
+    };
     render() {
         return (
             <Router>
