@@ -1,7 +1,7 @@
 ## installs
 npm install axios --save <br>
 npm install react-router-dom <br>
-npm install semantic-ui-css <br>
+
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
