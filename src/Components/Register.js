@@ -12,7 +12,8 @@ class Register extends React.Component {
         this.state = {
             user: {
                 email: '',
-                password: ''
+                password: '',
+                confirmPassword:''
             },
             submitted: false
         };
@@ -34,8 +35,8 @@ class Register extends React.Component {
         e.preventDefault();
 
         this.setState({ submitted: true });
-        const { email, password } = this.state;
-        if (email && password) {
+        const { email, password, confirmPassword } = this.state;
+        if (email && password && password === confirmPassword) {
             axios.post(BaseURL ,
                 {
                     email: email,
@@ -47,26 +48,9 @@ class Register extends React.Component {
             });
         }
     }
-    handleClick() {
-        // axios.get(BaseURL + CreateAccount + "/"+this.state.accountNum + red,
-        //     {}).then((response) => {
-        //         console.log(response.data);
-        //     this.setState({
-        //         prize: response.data
-        //     });
-        //     if (this.state.prize !== "£0") {
-        //         this.setState({
-        //             windowState: 1
-        //         });
-        //     } else {
-        //         this.setState({
-        //             windowState: 2
-        //         });
-        //     }
-        // });
 
 
-    }
+
 
 
     render() {
@@ -89,6 +73,13 @@ class Register extends React.Component {
                         <input type="password" className="form-control" name="password" value={user.password} onChange={this.handleChange} />
                         {submitted && !user.password &&
                         <div className="help-block">Password is required</div>
+                        }
+                    </div>
+                    <div className={'form-group' + (submitted && !user.confirmPassword ? ' has-error' : '')}>
+                        <label htmlFor="password">Confirm Password</label>
+                        <input type="password" className="form-control" name="confirmPassword" value={user.confirmPassword} onChange={this.handleChange} />
+                        {submitted && !user.confirmPassword &&
+                        <div className="help-block">Password confirmation is required</div>
                         }
                     </div>
                     <div className="form-group">
