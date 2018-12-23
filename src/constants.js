@@ -1,3 +1,3 @@
-export const BaseURL = "http://localhost:8089";
+export const BaseURL = "changethis";
 export const login = "/login";
-export const register = "/register";
+export const register = "/v1/register";
