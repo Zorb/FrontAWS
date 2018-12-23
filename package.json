@@ -1,5 +1,5 @@
 {
-  "name": "fdsfsd",
+  "name": "FrontAWS",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,8 +8,7 @@
     "react-dom": "^16.6.3",
     "react-infinite-loader": "^1.0.2",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.1",
-    "semantic-ui-css": "^2.4.1"
+    "react-scripts": "2.1.1"
   },
   "scripts": {
     "start": "PORT=8080 react-scripts start",
