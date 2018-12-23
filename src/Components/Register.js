@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import axios from "axios";
-import {BaseURL} from "../constants";
+import {BaseURL, register} from "../constants";
 
 class Register extends React.Component {
 
@@ -37,7 +37,7 @@ class Register extends React.Component {
         this.setState({ submitted: true });
         const { email, password, confirmPassword } = this.state;
         if (email && password && password === confirmPassword) {
-            axios.post(BaseURL ,
+            axios.post(BaseURL + register,
                 {
                     email: email,
                     password: password
