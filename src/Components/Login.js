@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import axios from "axios";
-import {BaseURL} from "../constants";
+import {BaseURL, login} from "../constants";
 
 class Login extends React.Component {
     constructor(props) {
@@ -25,11 +25,12 @@ class Login extends React.Component {
         this.setState({ submitted: true });
         const { email, password } = this.state;
         if (email && password) {
-            axios.post(BaseURL ,
+            axios.post(BaseURL +login ,
                 {
                     email: email,
                     password: password
                 }).then((response) => {
+                    window.location = "/"
                 // this.setState({
                 //     email: response.data.email
                 // });
